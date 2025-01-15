@@ -1,0 +1,10 @@
+# autostart file
+
+# Set background color.
+swaybg -i /usr/share/backgrounds/archlinux/simple.png >/dev/null 2>&1 &
+
+## Launch a panel such as yambar or waybar.
+sfwbar >/dev/null 2>&1 &
+
+# launch im.
+fcitx5 >/dev/null 2>&1 &

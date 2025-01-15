@@ -1,0 +1,55 @@
+[user]
+	name = mori_oh
+	email = dev@example.com
+
+[includeif "gitdir:~/Work/"]
+	path = ~/Work/.gitconfig
+
+[credential]
+	helper = store
+
+[lfs]
+	allowincompletepush = true
+
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+
+[core]
+	editor = vi
+	pager = delta
+	quotepath = false
+	excludesfile = ~/.gitignore
+
+[init]
+	defaultBranch = main
+
+[delta]
+	line-numbers = true
+	navigate = true
+	side-by-side = true
+
+[diff]
+	colorMoved = default
+
+[alias]
+	graph = log --graph \
+		--topo-order --date=short -C -M \
+		--pretty=format:'%x09%C(auto)%h"%C(cyan)@%C(ul)%an%Creset":%Cgreen%ad%Creset %C(auto)%d\n%x09%x09%s'
+
+	ln = log --oneline -n
+	logs = ln 10
+	lognom = log --no-merges --topo-order --date=short --pretty=format:'%C(yellow)%h %C(cyan)%an %C(green)%ad %C(reset)%s'
+	detail = log -1 --stat
+	chadd = update-index --add --chmod=+x
+	chsub = update-index --add --chmod=-x
+	rebase-orig = rebase --onto=origin/HEAD
+	join = commit --amend --no-edit
+
+	edit = !"command $(git config core.editor)"
+	details = !"read arr;for commit in $arr[@]};do git detail $commit;printf '\n\n';done"
+	pager = !"command $(git config core.pager)"
+
+	patch-from-merge = !"c=( $(git show --format=%p $1) ) && git format-patch -a $( git show-branch --merge-base ${c[0]} $1 )..${c[1]}"

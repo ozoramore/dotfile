@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--
+This is a very simple config file with many options missing. For a complete
+set of options with comments, see docs/rc.xml.all
+-->
+<labwc_config>
+  <theme>
+    <name>Numix</name>
+    <cornerRadius>10</cornerRadius>
+    <font name="UDEV Gothic NF" size="10"/>
+    <dropShadows>yes</dropShadows>
+  </theme>
+  <keyboard>
+    <default/>
+    <!-- Use a different terminal emulator -->
+    <keybind key="W-Return">
+      <action name="Execute" command="foot"/>
+    </keybind>
+    <keybind key="W-F4">
+      <action name="None"/>
+    </keybind>
+  </keyboard>
+  <mouse>
+    <default/>
+  </mouse>
+  <placement>
+    <policy>Automatic</policy>
+  </placement>
+  <libinput>
+    <device>
+      <naturalScroll>no</naturalScroll>
+    </device>
+  </libinput>
+</labwc_config>

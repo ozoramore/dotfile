@@ -1,0 +1,23 @@
+# tigrc : tig(tui git client) config file
+set line-graphics			= utf-8
+set truncation-delimiter	= utf-8
+set tab-size				= 4
+set ignore-space			= false
+set ignore-case				= false
+set diff-options			= -m --first-parent
+set mouse					= true
+set editor-line-number		= yes
+set refresh-mode			= auto
+
+set stage-view				= line-number:yes,interval=1 text
+set diff-view				= line-number:yes,interval=1 text
+set log-view				= line-number:yes,interval=1 text
+set blob-view				= line-number:yes,interval=1 text
+set main-view				= line-number:interval=1 date:display=custom,format=%Y-%m-%d id author commit-title:graph=v2,refs=yes
+set vertical-split			= no
+set split-view-height		= 80%
+
+color "diff --"	yellow	default
+color "+"		green	default
+color  diff-header       default magenta
+color  diff-chunk        black   white

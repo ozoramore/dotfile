@@ -1,0 +1,25 @@
+# -*- conf -*-
+# HM-theme
+
+[colors]
+foreground=dcdfe4
+background=1a2124
+regular0=17181a # black
+regular1=d95136 # red
+regular2=43b32d # green
+regular3=d9a336 # yellow
+regular4=366cd9 # blue
+regular5=be36d9 # magenta
+regular6=36bed9 # cyan
+regular7=dde4f5 # white
+bright0=737780  # bright black
+bright1=ff9580  # bright red
+bright2=95ff80  # bright green
+bright3=ffd480  # bright yellow
+bright4=80aaff  # bright blue
+bright5=ea80ff  # bright magenta
+bright6=80eaff  # bright cyan
+bright7=ffffff  # bright white
+
+# selection-foreground=1c1c1c
+# selection-background=af87d7
