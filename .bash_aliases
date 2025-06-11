@@ -2,9 +2,22 @@
 alias q=exit
 
 # ctrlc: Copy Shortcut
-alias ctrlc='xsel --clipboard --input'
+function ctrlc() {
+	if test -e /bin/xsel; then
+		xsel --clipboard --input
+	elif test -e /bin/wl-copy; then
+		wl-copy
+	fi
+}
+
 # ctrlv: Paste Shortcut
-alias ctrlv='xsel --clipboard --output'
+function ctrlv() {
+	if test -e /bin/xsel; then
+		xsel --clipboard --output
+	elif test -e /bin/wl-copy; then
+		wl-paste
+	fi
+}
 
 alias lesss='less -AFiKS~R --use-color -x4'
 alias difff='diff --strip-trailing-cr -rptBbEwZ -u'
@@ -25,4 +38,3 @@ function pacfzf() {
 function aurfzf() {
 	aur search --json "$@" | jq -r .[].Name | fzf --preview 'aur search -i {}' --bind 'enter:execute( aur search -i {} | less )'
 }
-
