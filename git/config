@@ -1,6 +1,6 @@
 [user]
-	name = mori_oh
-	email = dev@example.com
+	name = ozoramore
+	email = dev@t2arc.net
 
 [includeif "gitdir:~/Work/"]
 	path = ~/Work/.gitconfig
@@ -25,6 +25,9 @@
 
 [init]
 	defaultBranch = main
+
+[fetch]
+	#all = true
 
 [delta]
 	line-numbers = true
