@@ -48,11 +48,6 @@ if test -f /usr/share/bash-completion/bash_completion; then . /usr/share/bash-co
 # shellcheck disable=SC1091
 if test -f /etc/bash_completion; then . /etc/bash_completion; fi
 
-# speed tuning
-#bind 'set completion-ignore-case on'
-#bind 'set show-all-if-ambiguous on'
-bind 'set bell-style none'
-
 # set default commands
 export EDITOR=vi
 export VISUAL=vi
